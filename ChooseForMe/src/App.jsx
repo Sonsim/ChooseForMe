@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Results from "./Results";
 import "./App.css";
 
 function App() {
-  const possibilities = [];
+  const [possibilities, setPossibilites] = useState([]);
+  console.log(possibilities);
   return (
     <>
-      <Form possibilities={possibilities} />
-      <Results possibilities={possibilities} />
+      <Form possibilities={possibilities} setPossibilities={setPossibilites} />
+      <Results possibilities={possibilities} setPos={setPossibilites} />
     </>
   );
 }
